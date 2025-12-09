@@ -10,7 +10,7 @@ const products = [
     icon: "🎂",
     description: "Create a stunning personalized birthday webpage with photo galleries, countdown timers, wishes collection, and interactive elements.",
     features: ["Photo Gallery", "Countdown Timer", "Wishes Collection", "Video Messages", "Music Playlist"],
-    price: 1900,
+    price: 1500,
     popular: true,
     gradient: "from-pink-500 to-rose-500",
   },
@@ -20,7 +20,7 @@ const products = [
     icon: "💍",
     description: "Celebrate your love story with romantic timelines, photo collages, love letters, and a beautiful journey showcase.",
     features: ["Love Timeline", "Photo Collage", "Love Letters", "Memory Lane", "Anniversary Counter"],
-    price: 2900,
+    price: 1900,
     popular: true,
     gradient: "from-purple-500 to-pink-500",
   },
@@ -30,7 +30,7 @@ const products = [
     icon: "💼",
     description: "Recognize professional achievements with career milestone pages, team messages, and accomplishment showcases.",
     features: ["Career Timeline", "Team Messages", "Achievement Badges", "Stats Dashboard", "Thank You Wall"],
-    price: 2700,
+    price: 1700,
     popular: false,
     gradient: "from-blue-500 to-cyan-500",
   },
@@ -40,7 +40,7 @@ const products = [
     icon: "🏢",
     description: "Create team celebration pages and company milestone sites perfect for launches, achievements, and corporate gatherings.",
     features: ["Event Countdown", "Team Gallery", "Company Stats", "Interactive Agenda", "Live Updates"],
-    price: 7900,
+    price: 2900,
     popular: false,
     gradient: "from-cyan-500 to-teal-500",
   },
@@ -50,7 +50,7 @@ const products = [
     icon: "👶",
     description: "Welcome your little one with beautiful announcement pages featuring galleries, growth tracking, and family messages.",
     features: ["Photo Gallery", "Birth Details", "Family Tree", "Growth Tracker", "Guest Book"],
-    price: 2500,
+    price: 1500,
     popular: true,
     gradient: "from-yellow-400 to-orange-500",
   },
@@ -60,7 +60,7 @@ const products = [
     icon: "🎓",
     description: "Celebrate academic achievements with pages showcasing the graduate's journey, accomplishments, and well wishes.",
     features: ["Academic Journey", "Photo Timeline", "Congrats Wall", "Future Goals", "Memory Slideshow"],
-    price: 3400,
+    price: 1400,
     popular: false,
     gradient: "from-indigo-500 to-purple-500",
   },
@@ -70,7 +70,7 @@ const products = [
     icon: "🌟",
     description: "Honor a lifetime of work with career retrospective webpages, colleague messages, and memorable moments.",
     features: ["Career Retrospective", "Colleague Messages", "Photo Archive", "Achievement Showcase", "Farewell Video"],
-    price: 3200,
+    price: 1200,
     popular: false,
     gradient: "from-amber-500 to-yellow-500",
   },
@@ -80,7 +80,7 @@ const products = [
     icon: "🕯️",
     description: "Create touching remembrance pages to honor loved ones with tributes, memories, and virtual candle lighting.",
     features: ["Memory Wall", "Photo Archive", "Tribute Messages", "Virtual Candles", "Timeline of Life"],
-    price: 6400,
+    price: 2400,
     popular: false,
     gradient: "from-slate-400 to-gray-500",
   },
@@ -170,7 +170,7 @@ export default function ProductsPage() {
                   {/* Price and CTA */}
                   <div className="flex items-center justify-between pt-4 border-t border-white/10">
                     <div>
-                      <span className="text-2xl font-bold text-white">${product.price}</span>
+                      <span className="text-2xl font-bold text-white">₹{product.price}</span>
                       <span className="text-gray-500 text-sm">/page</span>
                     </div>
                     <Link
