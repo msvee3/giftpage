@@ -2,8 +2,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Link from "next/link";
 
-// Team members data
-const teamMembers = [
+// Team members data - Commented out as Team section is disabled
+/* const teamMembers = [
   {
     name: "Dr. Sarah Chen",
     role: "CEO & Founder",
@@ -28,7 +28,7 @@ const teamMembers = [
     bio: "Expert in web technologies and animation, making our gift pages come alive with beautiful interactions.",
     gradient: "from-indigo-500 to-purple-500",
   },
-];
+]; */
 
 // Process steps
 const processSteps = [
@@ -70,8 +70,8 @@ const whyChooseUs = [
     ),
   },
   {
-    title: "Lightning Fast",
-    description: "Pages are delivered within 24 hours. Need it sooner? Our rush service can have your page ready in just 4 hours.",
+    title: "Fast Delivery",
+    description: "Pages are delivered within 5-10 days based on complexity. Our expert team ensures quality and attention to detail.",
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -221,7 +221,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Team Section */}
+      {/* Team Section - Commented out as per request
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
@@ -240,7 +240,6 @@ export default function AboutPage() {
                 key={index}
                 className="glass-card rounded-2xl p-6 text-center group hover:scale-105 transition-transform duration-300"
               >
-                {/* Avatar */}
                 <div className={`w-24 h-24 rounded-full bg-gradient-to-br ${member.gradient} mx-auto mb-4 flex items-center justify-center text-3xl font-bold text-white group-hover:scale-110 transition-transform`}>
                   {member.name.split(' ').map(n => n[0]).join('')}
                 </div>
@@ -253,6 +252,7 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+      */}
 
       {/* Why Choose Us */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">

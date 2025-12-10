@@ -85,7 +85,7 @@ export default function Home() {
           
           <p className="text-lg sm:text-xl text-gray-400 max-w-3xl mx-auto mb-8">
             Transform your celebrations into stunning, shareable digital experiences. 
-            Our AI-powered platform creates personalized webpages that capture memories, 
+            Our marketplace connects you with AI-powered personalized webpages that capture memories, 
             photos, and heartfelt messages for every special occasion.
           </p>
 
@@ -94,7 +94,7 @@ export default function Home() {
               href="/products"
               className="btn-primary px-8 py-4 rounded-full text-white font-semibold text-lg glow-hover"
             >
-              Explore Products
+              Browse Products
             </Link>
             <Link
               href="/about"
@@ -122,7 +122,7 @@ export default function Home() {
               <svg className="w-5 h-5 text-cyan-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
               </svg>
-              <span>24hr Delivery</span>
+              <span>5-10 Days Delivery</span>
             </div>
           </div>
         </div>
@@ -322,7 +322,7 @@ export default function Home() {
               href="/products"
               className="inline-block btn-primary px-8 py-4 rounded-full text-white font-semibold text-lg glow"
             >
-              Get Started Now
+              Browse Products
             </Link>
           </div>
         </div>
