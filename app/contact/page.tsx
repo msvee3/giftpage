@@ -7,8 +7,8 @@ import { useState } from "react";
 // FAQ data
 const faqs = [
   {
-    question: "How long does it take to create a gift page?",
-    answer: "Standard delivery is within 24 hours. We also offer rush delivery in 4 hours for urgent celebrations. Once your page is ready, you'll receive an email with your unique link.",
+    question: "How long does it take to receive my gift page?",
+    answer: "Standard delivery is within 5-10 days depending on the complexity of your requirements. Once your page is ready, you'll receive an email with your unique link and access details.",
   },
   {
     question: "Can I edit my gift page after it's created?",
@@ -230,26 +230,10 @@ export default function ContactPage() {
                       </svg>
                     </div>
                     <div>
-                      <p className="text-gray-400 text-sm">Phone</p>
-                      <a href="tel:+15551234567" className="text-white hover:text-cyan-400 transition-colors">
-                        +1 (555) 123-4567
+                      <p className="text-gray-400 text-sm">Phone / WhatsApp</p>
+                      <a href="tel:+918015767780" className="text-white hover:text-cyan-400 transition-colors">
+                        +91 80157 67780
                       </a>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-pink-500 to-rose-500 flex items-center justify-center flex-shrink-0">
-                      <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                      </svg>
-                    </div>
-                    <div>
-                      <p className="text-gray-400 text-sm">Address</p>
-                      <p className="text-white">
-                        123 Innovation Drive<br />
-                        San Francisco, CA 94102
-                      </p>
                     </div>
                   </div>
                 </div>

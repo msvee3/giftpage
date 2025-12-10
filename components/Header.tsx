@@ -42,7 +42,7 @@ export default function Header() {
               href="/products"
               className="btn-primary px-6 py-2 rounded-full text-white font-medium"
             >
-              Create Your Page
+              Order Now
             </Link>
           </div>
 
@@ -101,7 +101,7 @@ export default function Header() {
                 className="btn-primary px-6 py-2 rounded-full text-white font-medium text-center"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Create Your Page
+                Order Now
               </Link>
             </div>
           </div>

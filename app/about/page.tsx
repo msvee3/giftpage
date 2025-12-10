@@ -70,8 +70,8 @@ const whyChooseUs = [
     ),
   },
   {
-    title: "Lightning Fast",
-    description: "Pages are delivered within 24 hours. Need it sooner? Our rush service can have your page ready in just 4 hours.",
+    title: "Fast Delivery",
+    description: "Pages are delivered within 5-10 days based on complexity. Our expert team ensures quality and attention to detail.",
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
