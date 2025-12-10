@@ -112,11 +112,15 @@ export default function ProductsPage() {
 
   const handleSendWhatsApp = () => {
     if (!selectedProduct || !orderForm.name || !orderForm.email || !orderForm.contact) {
-      alert("Please fill in all fields");
-      return;
+      return; // Form validation will handle this via required attributes
     }
 
-    const message = `Hi, I would like to order:\n\nProduct: ${selectedProduct.name}\nPrice: ₹${selectedProduct.price}\n\nMy Details:\nName: ${orderForm.name}\nEmail: ${orderForm.email}\nContact: ${orderForm.contact}`;
+    // Sanitize user input for URL encoding
+    const sanitizedName = orderForm.name.trim();
+    const sanitizedEmail = orderForm.email.trim();
+    const sanitizedContact = orderForm.contact.trim();
+
+    const message = `Hi, I would like to order:\n\nProduct: ${selectedProduct.name}\nPrice: ₹${selectedProduct.price}\n\nMy Details:\nName: ${sanitizedName}\nEmail: ${sanitizedEmail}\nContact: ${sanitizedContact}`;
     const whatsappUrl = `https://wa.me/918015767780?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
     
@@ -375,6 +379,8 @@ export default function ProductsPage() {
                   value={orderForm.name}
                   onChange={handleFormChange}
                   required
+                  minLength={2}
+                  maxLength={100}
                   className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-colors"
                   placeholder="John Doe"
                 />
@@ -391,6 +397,7 @@ export default function ProductsPage() {
                   value={orderForm.email}
                   onChange={handleFormChange}
                   required
+                  maxLength={100}
                   className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-colors"
                   placeholder="john@example.com"
                 />
@@ -407,6 +414,9 @@ export default function ProductsPage() {
                   value={orderForm.contact}
                   onChange={handleFormChange}
                   required
+                  minLength={10}
+                  maxLength={15}
+                  pattern="[\+]?[0-9\s\-]+"
                   className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-colors"
                   placeholder="+91 98765 43210"
                 />
