@@ -95,7 +95,7 @@ export default function ProductsPage() {
   const [orderForm, setOrderForm] = useState({
     name: "",
     email: "",
-    contact: "",
+    message: "",
   });
 
   const handleOrderClick = (product: typeof products[0]) => {
@@ -103,7 +103,7 @@ export default function ProductsPage() {
     setShowOrderModal(true);
   };
 
-  const handleFormChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleFormChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setOrderForm(prev => ({
       ...prev,
       [e.target.name]: e.target.value
@@ -111,21 +111,21 @@ export default function ProductsPage() {
   };
 
   const handleSendWhatsApp = () => {
-    if (!selectedProduct || !orderForm.name || !orderForm.email || !orderForm.contact) {
+    if (!selectedProduct || !orderForm.name || !orderForm.email || !orderForm.message) {
       return; // Form validation will handle this via required attributes
     }
 
     // Sanitize user input for URL encoding
     const sanitizedName = orderForm.name.trim();
     const sanitizedEmail = orderForm.email.trim();
-    const sanitizedContact = orderForm.contact.trim();
+    const sanitizedMessage = orderForm.message.trim();
 
-    const message = `Hi, I would like to order:\n\nProduct: ${selectedProduct.name}\nPrice: ₹${selectedProduct.price}\n\nMy Details:\nName: ${sanitizedName}\nEmail: ${sanitizedEmail}\nContact: ${sanitizedContact}`;
+    const message = `Hi, I would like to order:\n\nProduct: ${selectedProduct.name}\nPrice: ₹${selectedProduct.price}\n\nMy Details:\nName: ${sanitizedName}\nEmail: ${sanitizedEmail}\n\nMessage:\n${sanitizedMessage}`;
     const whatsappUrl = `https://wa.me/918015767780?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
     
     // Reset form and close modal
-    setOrderForm({ name: "", email: "", contact: "" });
+    setOrderForm({ name: "", email: "", message: "" });
     setShowOrderModal(false);
     setSelectedProduct(null);
   };
@@ -350,7 +350,7 @@ export default function ProductsPage() {
               onClick={() => {
                 setShowOrderModal(false);
                 setSelectedProduct(null);
-                setOrderForm({ name: "", email: "", contact: "" });
+                setOrderForm({ name: "", email: "", message: "" });
               }}
               className="absolute top-4 right-4 text-gray-400 hover:text-white"
               aria-label="Close"
@@ -404,21 +404,20 @@ export default function ProductsPage() {
               </div>
 
               <div>
-                <label htmlFor="contact" className="block text-sm font-medium text-gray-300 mb-2">
-                  Contact Number *
+                <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
+                  Your Message *
                 </label>
-                <input
-                  type="tel"
-                  id="contact"
-                  name="contact"
-                  value={orderForm.contact}
+                <textarea
+                  id="message"
+                  name="message"
+                  value={orderForm.message}
                   onChange={handleFormChange}
                   required
                   minLength={10}
-                  maxLength={15}
-                  pattern="[\+]?[0-9\s\-]+"
-                  className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-colors"
-                  placeholder="+91 98765 43210"
+                  maxLength={500}
+                  rows={4}
+                  className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-colors resize-none"
+                  placeholder="Tell us about your requirements..."
                 />
               </div>
 
